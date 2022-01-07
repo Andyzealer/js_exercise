@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //el's first
+      const vm = new Vue({
+        el: "#root", //el 用于指定当前Vue实例为哪个容器服务。通常为CSS选择器字符串。
+        data: {
+          name: "world",
+        },
+      });
+
+      //second
+      const vm = new Vue({
+        // el: "#root", //el 用于指定当前Vue实例为哪个容器服务。通常为CSS选择器字符串。
+        data: {
+          name: "world",
+        },
+      });
+      vm.$mount("#root");
+      //mount 挂载
+
+      const vm = new Vue({
+        el: "#root", //el 用于指定当前Vue实例为哪个容器服务。通常为CSS选择器字符串。
+        // data: {
+        //   name: "world",
+        // },
+
+        data() {
+          console.log(this); //this是VUE实例对象，VUE管理的函数不能是箭头函数；
+          return {
+            name: "world",
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

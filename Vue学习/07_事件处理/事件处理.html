@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>初识Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h1>hello {{name}}</h1>
+    </div>
+    <script>
+      //   Vue.config.productionTip = false;
+
+      const vm = new Vue({
+        el: "#root", //el 用于指定当前Vue实例为哪个容器服务。通常为CSS选择器字符串。
+        data: {
+          name: "world",
+        },
+      });
+
+      let func = () => {
+        console.log(this);
+      };
+      let obj = {
+        showInfo: func,
+      };
+      let obj2 = {
+        name: "andy",
+        age: 18,
+      };
+      let argus = {
+        data: obj2,
+        methods: obj,
+      };
+
+      const vm = new Vue(argus);
+    </script>
+  </body>
+</html>
