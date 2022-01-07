@@ -21,19 +21,21 @@
         },
       });
 
-      let func = () => {
+      let showInfo = () => {
         console.log(this);
       };
-      let obj = {
-        showInfo: func,
+      let methods = {
+        showInfo,
       };
-      let obj2 = {
-        name: "andy",
+
+      let name = "andy";
+      let data = {
+        name,
         age: 18,
       };
       let argus = {
-        data: obj2,
-        methods: obj,
+        data,
+        methods,
       };
 
       const vm = new Vue(argus);

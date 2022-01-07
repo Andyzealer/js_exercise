@@ -14,3 +14,7 @@ Object.defineProperty(obj2, "x", {
     obj1.x = value;
   },
 });
+
+// 通过vm对象来代理data对象中属性的操作（读/写）
+
+// 通过 Object.defineProperty()把对象中所有属性添加到VM上。为每一个添加到VM上的属性都指定getter/setter 在内部去操作读和写data中对应的属性
