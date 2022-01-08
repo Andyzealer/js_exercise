@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>初识Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <!-- 计算属性：已有的属性进行计算 -->
+    <div id="root">
+      姓:<input type="text" v-model:value="firstName" /> <br />
+      名: <input type="text" v-model:value="lastName" /> <br />
+      全名: <span>{{fullName}}</span>
+    </div>
+    <script>
+      //   Vue.config.productionTip = false;
+
+      const vm = new Vue({
+        el: "#root",
+        data: {
+          firstName: "zhang",
+          lastName: "san",
+        },
+        computed: {
+          fullName: {
+            get() {
+              //有人读取full name时，get就会被调用，并且返回值就会作为full Name的值
+              //初次读取full name会被调用；
+              //所以来的数据发生变化时会被调用；
+              //methods没有缓存，computed里面有缓存，重复调用不会去调用get
+              return this.firstName + "-" + this.lastName;
+            },
+            //set在full name修改时，会被调用
+            set(value) {
+              const arr = value.split("-");
+              this.firstName = arr[0];
+              this.lastName = arr[1];
+            },
+          },
+        },
+        //简写
+        computed: {
+          fullName() {
+            return "???";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

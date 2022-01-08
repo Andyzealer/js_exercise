@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>初识Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="root">
+      姓:<input type="text" v-model:value="firstName" /> <br />
+      名: <input type="text" v-model:value="lastName" /> <br />
+      全名: <span>{{firstName}}-{{lastName}}</span>
+    </div>
+    <script>
+      //   Vue.config.productionTip = false;
+
+      const vm = new Vue({
+        el: "#root",
+        data: {
+          firstName: "zhang",
+          lastName: "san",
+        },
+      });
+    </script>
+  </body>
+</html>

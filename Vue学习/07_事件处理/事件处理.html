@@ -10,35 +10,52 @@
   <body>
     <div id="root">
       <h1>hello {{name}}</h1>
+      <button @click="showInfo($event,66)">点我提示信息</button>
+      <!-- <button v-on: click="showInfo($event, 66)">点我提示信息</button> -->
     </div>
     <script>
       //   Vue.config.productionTip = false;
+      // let showInfo = () => {
+      //   console.log(this);
+      // };
+      // let methods = {
+      //   showInfo,
+      // };
 
+      // let name = "andy";
+      // let data = {
+      //   name,
+      //   age: 18,
+      // };
+      // let argus = {
+      //   data,
+      //   methods,
+      // };
+
+      // const vm = new Vue(argus);
+      // 为什么不能用箭头函数？
+      // const vm = new Vue({
+      //   el:'#root',
+      //   data:{
+      //     name:"andy"
+      //   },
+      //   methods:{
+      //     showInfo=(e)=>{
+      //       alert('hello')
+      //     }
+      //   }
+      // })
       const vm = new Vue({
-        el: "#root", //el 用于指定当前Vue实例为哪个容器服务。通常为CSS选择器字符串。
+        el: "#root",
         data: {
-          name: "world",
+          name: "Andy",
+        },
+        methods: {
+          showInfo(event, number) {
+            alert("hello!!");
+          },
         },
       });
-
-      let showInfo = () => {
-        console.log(this);
-      };
-      let methods = {
-        showInfo,
-      };
-
-      let name = "andy";
-      let data = {
-        name,
-        age: 18,
-      };
-      let argus = {
-        data,
-        methods,
-      };
-
-      const vm = new Vue(argus);
     </script>
   </body>
 </html>
