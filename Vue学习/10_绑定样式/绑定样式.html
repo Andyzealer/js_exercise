@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 绑定class样式——字符川写法：样式的类名不确定，需要动态制定。 -->
+    <div id="root" class="basic" :class="mood" @click="changeMood">mood</div>
+    <!-- 绑定class样式——数组写法：要绑定的样式个数不确定，名字也不确定（ 可以用数组pop push shift unshift进行更改） -->
+    <div id="root" class="basic" :class="classArr" @click="changeMood">
+      <!-- 也可以用对象 -->
+      <div id="root" class="basic" :class="classObj" @click="changeMood"></div>
+      <!-- 绑定style样式 -->
+      <div id="root" class="basic" :style="styleObj" @click="changeMood"></div>
+      mood
+    </div>
+    <script>
+      const vm = new Vue({
+        el: "#root",
+        data: {
+          classArr: [],
+          styleObj: {
+            fontSize: "40px",
+            backgroundColor: "red",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -29,6 +29,11 @@
             setTimeout(() => {
               this.fullname = newValue + "-" + this.lastName;
             }, 1000);
+            //注意：这里的回调函数必须是箭头函数，this指向vm（回调函数的this往外面找，first Name是普通函数的this指向vm）
+            setTimeout(function () {
+              this.fullname = newValue + "-" + this.lastName;
+            }, 1000);
+            //在这里，普通函数的this就指向window，因为是在定时结束后，window调用回调函数。
           },
         },
       });

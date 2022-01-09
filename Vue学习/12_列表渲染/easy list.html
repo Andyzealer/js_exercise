@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基本列表</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for=""></li>
+      </ul>
+      <h1>hello {{name}}</h1>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: "#root",
+        data: {
+          keyWord:"",
+          persons:[
+            {id = '001', name = "马冬梅", age ='18'},{},{},{},{},{}
+          ],
+          filePersons:[]
+        },
+        watch:{
+          keyWord(){
+            this.persons.filter()
+          }
+        },
+        computed:{
+          filePersons(){
+            return this.persons.filter((p)=>{
+              return p.name.indexOf(this.keyWord)!==-1;
+            })
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+()=>{ let v = p.name.indexOf(val) if (v !==-1) return val }
