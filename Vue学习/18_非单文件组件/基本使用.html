@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>组件</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- 第三步：使用组件 -->
+      <student></student>
+      <student></student>
+    </div>
+    <script>
+      //1. 创建组件 2. 注册组件 3. 使用组件
+      //   const school = Vue.extend({
+      //     // el: "#root", 组件定义时，不能有el。因为所有的组件最终都被一个VM管理。
+
+      //     //组件中，data必须使用函数式。
+      //     // data: {
+      //     //   name: "world",
+      //     // },
+
+      //     //每一次返回的是新的对象（地址不一样)
+      //     data() {
+      //       return {
+      //         schoolName: "Andy",
+      //         adress: "beijing",
+      //       };
+      //     },
+      //   });
+      const student = Vue.extend({
+        template: `<div>
+        <h2>student Name {{name}}</h2>
+        <h2>student age {{age}}</h2>
+      </div>
+        `,
+        data() {
+          return {
+            name: "Javis",
+            age: 18,
+          };
+        },
+      });
+
+      new Vue({
+        el: "#root",
+        //局部注册
+        components: {
+          //配置键值对（键就是组件名，后面的只是一个中转的变量
+          //   school: school, //可以直接写成 school
+          student,
+        },
+      });
+    </script>
+  </body>
+</html>

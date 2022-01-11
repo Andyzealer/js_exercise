@@ -18,27 +18,30 @@
       const vm = new Vue({
         el: "#root",
         data: {
-          keyWord:"",
-          persons:[
-            {id = '001', name = "马冬梅", age ='18'},{},{},{},{},{}
+          keyWord: "",
+          persons: [
+            { id: "001", name: "马冬梅", age: "18" },
+            { abc: { f: 0 } },
+            {},
+            {},
+            {},
+            {},
           ],
-          filePersons:[]
+          filePersons: [],
         },
-        watch:{
-          keyWord(){
-            this.persons.filter()
-          }
+        watch: {
+          keyWord() {
+            this.persons.filter();
+          },
         },
-        computed:{
-          filePersons(){
-            return this.persons.filter((p)=>{
-              return p.name.indexOf(this.keyWord)!==-1;
-            })
-          }
-        }
+        computed: {
+          filePersons() {
+            return this.persons.filter((p) => {
+              return p.name.indexOf(this.keyWord) !== -1;
+            });
+          },
+        },
       });
     </script>
   </body>
 </html>
-
-()=>{ let v = p.name.indexOf(val) if (v !==-1) return val }
