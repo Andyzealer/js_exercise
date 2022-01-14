@@ -1,0 +1,6 @@
+1. 
+如果组件名是一个单词组成 1）school 2)School
+如果组件名是多个单词：1）my-school 2）cli中用MySchool
+2. 
+组件名是在使用时才决定，定义的时候只使用一个变量名去装
+const school =Vue.extend(options)  ===const school = options
