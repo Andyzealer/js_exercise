@@ -1,13 +1,12 @@
 <template>
   <div>
-    <school></school>
-    <student></student>
+    <School></School>
+    <Student></Student>
   </div>
 </template>
 
 <script>
-import school from "./school.vue";
-import student from "./student.vue";
+
 export default {
   name: "App",
   components: {
